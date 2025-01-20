@@ -5,7 +5,7 @@ export const createUser = async ({
     email, password
 }) =>{
     if (!email || !password){
-        throw new Error('Email and password are required');
+        throw new Error('Email and password are not entered');
     }
 
     const hashPassword = await userModel.hashPassword(password);
