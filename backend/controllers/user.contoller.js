@@ -3,6 +3,7 @@ import userService from '../services/user.service.js';
 import { validationResult } from 'express-validator'
 
 
+
 export const createUserController = async (req, res)=>{
     const errors = validationResult(req);
     if (!errors.isEmpty()){
@@ -19,3 +20,5 @@ export const createUserController = async (req, res)=>{
         res.status(500).json({error: error.message});
     }
 }
+
+export default users;
