@@ -23,4 +23,4 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
-export default app.js;
+export default app;
