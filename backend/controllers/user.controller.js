@@ -25,19 +25,22 @@ export const createUserController = async (req, res)=>{
 export const loginController =async (req, res) => {
     const errors = validationResult(req);
 
-    if(!error.isEmpty()) {
+    if(!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
 
     try{
         const {email, password} = req.body;
-        const user = await userModel.findOne({email});
+        const user = await userModel.findOne({email}).select('+password')
+        
 
         if(!user) {
             return res.status(401).json({
                 errors:'Invalid Credentials'
             });
         }
+
+        const isMatch = await user.isValidatePassword(password);
 
         if (!isMatch){
             return res.status(401).json({
@@ -49,7 +52,10 @@ export const loginController =async (req, res) => {
 
         res.status(200).json({ user, token })
 
-    }catch(error){
+    }catch(err){
+
+        console.log(err);
+
         res.status(400).send(err.message);
     }
 }
