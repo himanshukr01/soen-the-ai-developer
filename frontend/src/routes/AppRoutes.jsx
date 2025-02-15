@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, BrowserRouter, Routes } from 'react-router-dom'
 import Login from '../screens/Login'
+import Register from '../screens/Register'
 
 const AppRoutes = () => {
   return (
@@ -9,7 +10,7 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<div>Home</div>} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<div>Register</div>} />
+        <Route path="/register" element={<Register />} />
       </Routes>
 
     </BrowserRouter>
