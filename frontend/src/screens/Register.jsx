@@ -12,7 +12,7 @@ const Register = () => {
 
   function submitHandler(e) {
     e.preventDefault();
-    axios.post('/register', { email, password })
+    axios.post('/users/register', { email, password })
     .then((res) => {
       console.log(res.data);
       navigate('/');
