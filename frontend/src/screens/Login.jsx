@@ -5,17 +5,20 @@ import { UserContext } from '../context/user.context';
 
 
 const Login = () => {
+  
 
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [user, setUser] = useState('');
 
-  const { setUser } = useContext(UserContext);
+  // const { setUser } = useContext(UserContext);
 
   const navigate = useNavigate();
 
   function submitHandler(e) {
     e.preventDefault();
-    axios.post('/users/login', { email, password })
+    axios.post('/users/login', { email, password, user })
     .then((res) => {
       console.log(res.data);
 
