@@ -34,7 +34,7 @@ const Register = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-900 to-gray-800 px-6">
       <div className="bg-gray-700 p-12 rounded-2xl shadow-2xl w-full max-w-lg border border-gray-600">
-        <h2 className="text-4xl font-bold text-white mb-10 text-center">Login</h2>
+        <h2 className="text-4xl font-bold text-white mb-10 text-center">Register</h2>
         <form onSubmit={submitHandler} className="space-y-8">
           <div className="space-y-4">
             <label className="block text-gray-300 text-lg font-semibold" htmlFor="email">
@@ -70,8 +70,8 @@ const Register = () => {
           </button>
         </form>
         <p className="text-gray-300 mt-8 text-center text-lg">
-          Don't have an account? 
-          <Link to="/register" className="text-blue-400 hover:underline ml-1">Sign Up</Link>
+          Go to Login Page. 
+          <Link to="/login" className="text-blue-400 hover:underline ml-1">Login</Link>
         </p>
       </div>
     </div>
