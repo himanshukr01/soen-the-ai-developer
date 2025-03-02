@@ -12,7 +12,7 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [user, setUser] = useState('');
 
-  // const { setUser } = useContext(UserContext);
+ 
 
   const navigate = useNavigate();
 
